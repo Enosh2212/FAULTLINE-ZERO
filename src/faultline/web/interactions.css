@@ -1,0 +1,103 @@
+/* Soft glass tracking, deliberate easing, and quiet tactile feedback. */
+.liquid-nav.enhanced-nav{position:relative;isolation:isolate}
+.nav-selection-surface,.nav-hover-surface{position:absolute;left:0;top:0;pointer-events:none;border-radius:10px;opacity:0;transition:transform 480ms cubic-bezier(.22,1,.36,1),width 480ms cubic-bezier(.22,1,.36,1),height 350ms ease,opacity 180ms ease;z-index:0}
+.nav-selection-surface{background:linear-gradient(145deg,#80d4a026,#80d4a010);border:1px solid #9de5b643;box-shadow:inset 0 1px 0 #c1f6d21c,0 4px 16px #0002}
+.nav-hover-surface{background:linear-gradient(135deg,#e4fff016,#e4fff006);border:1px solid #e4fff01e;box-shadow:inset 0 1px 0 #ffffff15;z-index:1}
+.enhanced-nav .nav-item,.enhanced-nav .nav-item:hover,.enhanced-nav .nav-item.active{position:relative;z-index:2;background:transparent;border-color:transparent;box-shadow:none;border-radius:10px}
+.enhanced-nav .nav-item{color:#94a99d;transition:color 250ms ease,transform 350ms cubic-bezier(.22,1,.36,1);-webkit-tap-highlight-color:transparent}
+.enhanced-nav .nav-item:hover,.enhanced-nav .nav-item:focus-visible{color:#effbf3;transform:translateY(-1px)}
+.enhanced-nav .nav-item.active{color:#99e7b8}
+.enhanced-nav .nav-item:active{transform:translateY(0) scale(.96);transition-duration:110ms}
+.polished-button{position:relative;isolation:isolate;overflow:hidden;transition:transform 420ms cubic-bezier(.22,1,.36,1),box-shadow 420ms ease,background-color 300ms ease,border-color 300ms ease; -webkit-tap-highlight-color:transparent}
+.polished-button::after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;border-radius:inherit;opacity:0;background:radial-gradient(100px circle at var(--pointer-x,50%) var(--pointer-y,50%),#ffffff3d,transparent 80%);transition:opacity 300ms ease}
+.polished-button:hover::after{opacity:1}
+.polished-button:hover{transform:translateY(-3px);box-shadow:0 8px 25px #0004,0 0 22px #9be8b51c}
+.polished-button:active{transform:translateY(0) scale(.975);transition-duration:100ms;box-shadow:0 2px 8px #0003}
+.polished-button svg{transition:transform 420ms cubic-bezier(.22,1,.36,1)}
+#btn-header-cta:hover svg{transform:translateX(3px)}
+#btn-hero-how:hover svg{transform:translateY(3px)}
+#btn-hero-explore:hover svg,#btn-final-cta:hover svg{transform:translateY(-1px) rotate(-9deg)}
+.polished-button:focus-visible{outline:2px solid #b1f2c8;outline-offset:4px}
+@media(hover:none){.polished-button:hover,.enhanced-nav .nav-item:hover{transform:none}.polished-button:hover::after{opacity:0}.nav-hover-surface{display:none}}
+@media(prefers-reduced-motion:reduce){.nav-selection-surface,.nav-hover-surface,.enhanced-nav .nav-item,.polished-button,.polished-button::after,.polished-button svg{transition:none!important}.polished-button:hover,.polished-button:active,.enhanced-nav .nav-item:hover,.enhanced-nav .nav-item:active,.polished-button:hover svg{transform:none!important}}
+
+/* The public landing header is the entry point to account access. */
+.landing-auth-link{display:none}
+body:has(#view-landing.active) .header-actions .status-indicator-pill,body:has(#view-landing.active) #btn-header-cta{display:none}
+body:has(#view-landing.active) .landing-auth-link{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-size:12px;white-space:nowrap;padding:10px 12px;border-radius:9px;text-decoration:none;transition:background .25s,transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s}
+.landing-sign-in{color:#c8ddce}.landing-sign-in:hover{background:#c7f4d50c;color:#f0faf2}
+body:has(#view-landing.active) .landing-create-account{background:linear-gradient(130deg,#b1e6c1,#8bd0a3);color:#102819;padding:11px 17px;box-shadow:inset 0 1px 0 #e4fff044}
+.landing-create-account:hover{transform:translateY(-2px);box-shadow:0 6px 20px #0003}
+.landing-auth-link:focus-visible{outline:2px solid #b1edc5;outline-offset:4px}
+body:has(#view-landing.active) .liquid-header{height:auto;min-height:76px}
+body:has(#view-landing.active) .header-container{padding-top:13px;padding-bottom:13px}
+@media(max-width:1100px){body:has(#view-landing.active) .header-container{flex-wrap:wrap;gap:10px}body:has(#view-landing.active) .header-actions{margin-left:auto;gap:8px}body:has(#view-landing.active) .liquid-nav{order:3;width:100%;justify-content:space-between}}
+@media(max-width:700px){body:has(#view-landing.active) .landing-auth-link{font-size:11px;padding:9px 5px;gap:6px}body:has(#view-landing.active) .landing-create-account{padding:9px 11px}body:has(#view-landing.active) .brand-title{font-size:12px;letter-spacing:.6px}body:has(#view-landing.active) .liquid-nav{justify-content:flex-start;overflow-x:auto;scrollbar-width:none}body:has(#view-landing.active) .liquid-nav::-webkit-scrollbar{display:none}body:has(#view-landing.active) .nav-item{flex-shrink:0}}
+@media(max-width:360px){body:has(#view-landing.active) .header-container{padding-left:12px;padding-right:12px}body:has(#view-landing.active) .landing-auth-link{font-size:10px}body:has(#view-landing.active) .landing-create-account{padding-left:8px;padding-right:8px}}
+@media(prefers-reduced-motion:reduce){.landing-auth-link{transition:none!important}.landing-create-account:hover{transform:none}}
+
+/* Liquid glass finish for the three requested landing actions only. */
+body:has(#view-landing.active) #landing-create-account,
+#view-landing #btn-hero-explore,
+#view-landing #btn-hero-how{
+ position:relative;isolation:isolate;overflow:hidden;
+ border:1px solid #dcffe33d;border-radius:17px;
+ color:#e2f3e7;
+ background:linear-gradient(155deg,#e6ffee24 0%,#baf1cd12 43%,#87cfa21f 100%),#28513a55;
+ -webkit-backdrop-filter:blur(18px) saturate(165%);
+ backdrop-filter:blur(18px) saturate(165%);
+ box-shadow:inset 0 1px 0 #f0fff35c,inset 1px 0 0 #e0ffea1f,inset 0 -1px 0 #b4dfc21a,0 5px 14px #0003,0 12px 32px #0002;
+ text-shadow:0 1px 2px #001b0b66;
+ transition:transform 320ms cubic-bezier(.22,1,.36,1),box-shadow 320ms ease,border-color 240ms ease,background-color 240ms ease;
+}
+#view-landing #btn-hero-how{
+ background:linear-gradient(155deg,#e8fff014,#e1ffed04 48%,#c9eedb0b),#14251b55;
+ border-color:#daf0e32d;color:#cbddd1;
+ box-shadow:inset 0 1px 0 #f0fff333,inset 1px 0 0 #e0ffea0c,inset 0 -1px 0 #b4dfc20b,0 5px 14px #0003;
+}
+body:has(#view-landing.active) #landing-create-account{border-radius:15px}
+body:has(#view-landing.active) #landing-create-account::before,
+#view-landing #btn-hero-explore::before,
+#view-landing #btn-hero-how::before{
+ content:'';position:absolute;inset:0;z-index:0;pointer-events:none;border-radius:inherit;
+ background:linear-gradient(125deg,#f0fff22b,transparent 29%,transparent 62%,#d0ffe711);
+}
+body:has(#view-landing.active) #landing-create-account::after,
+#view-landing #btn-hero-explore::after,
+#view-landing #btn-hero-how::after{
+ content:'';position:absolute;inset:0;z-index:0;pointer-events:none;border-radius:inherit;
+ background:radial-gradient(110px 80px at var(--pointer-x,25%) var(--pointer-y,0%),#f1fff23b,transparent 78%);
+ opacity:.25;transition:opacity 300ms ease;
+}
+body:has(#view-landing.active) #landing-create-account>*,
+#view-landing #btn-hero-explore>*,
+#view-landing #btn-hero-how>*{position:relative;z-index:1}
+@media(hover:hover){
+ body:has(#view-landing.active) #landing-create-account:hover,
+ #view-landing #btn-hero-explore:hover,
+ #view-landing #btn-hero-how:hover{
+  transform:translateY(-2px);border-color:#e3ffec65;
+  box-shadow:inset 0 1px 0 #f0fff37a,inset 1px 0 0 #e0ffea2b,inset 0 -1px 0 #b4dfc21f,0 8px 24px #0004,0 0 24px #a6eac40b;
+ }
+ body:has(#view-landing.active) #landing-create-account:hover::after,
+ #view-landing #btn-hero-explore:hover::after,
+ #view-landing #btn-hero-how:hover::after{opacity:.85}
+}
+body:has(#view-landing.active) #landing-create-account:active,
+#view-landing #btn-hero-explore:active,
+#view-landing #btn-hero-how:active{
+ transform:translateY(0) scale(.98);transition-duration:100ms;
+ box-shadow:inset 0 1px 0 #f0fff33d,inset 0 2px 8px #00160922,0 3px 8px #0003;
+}
+body:has(#view-landing.active) #landing-create-account:focus-visible,
+#view-landing #btn-hero-explore:focus-visible,
+#view-landing #btn-hero-how:focus-visible{outline:2px solid #c4f0d3;outline-offset:5px}
+@supports not (backdrop-filter:blur(1px)){
+ body:has(#view-landing.active) #landing-create-account,
+ #view-landing #btn-hero-explore{background:linear-gradient(145deg,#375d45,#203a2c)}
+ #view-landing #btn-hero-how{background:linear-gradient(145deg,#253d2e,#15271c)}
+}
+@media(prefers-reduced-motion:reduce){
+ body:has(#view-landing.active) #landing-create-account,
+ #view-landing #btn-hero-explore,#view-landing #btn-hero-how{transition:none!important;transform:none!important}
+}

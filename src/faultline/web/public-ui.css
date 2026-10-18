@@ -1,0 +1,41 @@
+#main-header [hidden],#main-header .legacy-header-controls{display:none!important}
+#main-header .header-container{display:flex;align-items:center;gap:28px;max-width:1600px;margin:auto}
+#main-header .public-nav{display:flex;align-items:center;margin-left:auto;gap:24px}
+#main-header .public-nav a,#public-auth>a{font:500 13px/1.4 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;text-decoration:none;color:#c6d8cc;white-space:nowrap}
+#main-header .public-nav a:hover,#public-auth>a:hover{color:#f1faf4}
+#public-auth{display:flex;align-items:center;justify-content:flex-end;gap:22px;min-height:44px}
+#public-auth .public-get-started,#public-auth .public-dashboard{padding:12px 18px;border:1px solid #719c7e;border-radius:10px;background:linear-gradient(125deg,#c0dfc5,#9bcba7);color:#15291d;font-size:12px}
+#public-auth .public-get-started:hover,#public-auth .public-dashboard:hover{background:#c0dfc5;color:#13231a}
+#public-auth .public-session-status{color:#adbdaf;font:12px/1.5 Inter,sans-serif;background:transparent;border:0;min-width:130px;text-align:right}
+#public-auth .public-account{position:relative;font:13px/1.5 Inter,sans-serif}
+#public-auth .public-account summary{display:grid;place-items:center;list-style:none;cursor:pointer;width:44px;height:44px;border-radius:50%;border:1px solid #5e7e68;background:#20382a}
+#public-auth .public-account summary::-webkit-details-marker{display:none}
+#public-auth .public-avatar{color:#d9eddf;font-size:15px}
+#public-auth .public-account>div{position:absolute;right:0;top:55px;min-width:230px;max-width:calc(100vw - 32px);background:#122019;border:1px solid #3d5a47;box-shadow:0 16px 42px #0009;border-radius:12px;padding:8px;z-index:99}
+#public-auth .public-account strong{display:block;color:#bccdc2;padding:10px 12px;font-size:12px;overflow-wrap:anywhere;font-weight:500}
+#public-auth .public-account :is(a,button){display:block;width:100%;text-align:left;padding:11px 12px;border:0;border-radius:6px;font:13px/1.5 Inter,sans-serif;background:none;color:#ecf5ef;text-decoration:none;cursor:pointer}
+#public-auth .public-account :is(a,button):hover{background:#243c2c}
+#main-header :is(a,summary,button):focus-visible{outline:2px solid #bae0c4;outline-offset:4px}
+#section-how-it-works .section-header{margin-bottom:36px}
+.faultline-workflow{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:22px;isolation:isolate}
+.workflow-step{position:relative;min-width:0;text-align:left;padding:22px 17px;border:1px solid #344b3b;border-radius:12px;background:#101a14;color:#d8e9de;cursor:pointer;font:13px/1.6 Inter,sans-serif;transition:border-color .18s,background .18s,transform .18s;overflow:visible;box-shadow:none}
+.workflow-step:not(:last-child):after{content:'→';position:absolute;right:-19px;top:50%;transform:translateY(-50%);color:#779d82;font-size:19px;pointer-events:none}
+.workflow-step:hover{background:#1a2a20;border-color:#86b294;transform:translateY(-3px)}
+.workflow-step.selected{background:linear-gradient(145deg,#20382a,#15251c);border-color:#a0cbae}
+.workflow-step.selected:not(:last-child):after{animation:workflow-direction 1.7s ease-in-out 2;color:#c4e7cf}
+.workflow-step:focus-visible{outline:2px solid #c6e8d0;outline-offset:5px}
+.workflow-step-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px}
+.workflow-step svg{width:23px;height:23px;color:#b2d7bd}
+.workflow-step small{font:10px/1.5 ui-monospace,Consolas,monospace;color:#98b5a1;letter-spacing:.1em}
+.workflow-step strong{font-size:14px;font-weight:550;display:block;letter-spacing:-.025em;margin-bottom:10px;color:#e8f3ec}
+.workflow-step>span:last-child{display:block;font-size:12px;color:#a9c0b0;line-height:1.65}
+.workflow-explanation{display:grid;grid-template-columns:190px minmax(0,1fr);gap:24px;padding:24px 0;border-bottom:1px solid #324c3a;margin-top:28px;min-height:115px;align-items:start}
+.workflow-explanation h3{font:500 18px/1.4 Inter,sans-serif;color:#dcece1;margin:0;letter-spacing:-.03em}
+.workflow-explanation p{font:14px/1.75 Inter,sans-serif;color:#acc2b3;margin:0;max-width:850px}
+@keyframes workflow-direction{50%{opacity:.5;transform:translate(3px,-50%)}}
+/* One contextual action in the demo command bar; retain the existing handler markup. */
+#view-investigation .empty-state-run{display:none}
+@media(max-width:1100px){.faultline-workflow{gap:17px}.workflow-step{padding:18px 12px}.workflow-step:not(:last-child):after{right:-15px}.workflow-step strong{font-size:12px}.workflow-step>span:last-child{font-size:11px}}
+@media(max-width:760px){#main-header .header-container{gap:14px;flex-wrap:wrap;padding:16px 20px}#main-header .header-brand{margin-right:auto}#main-header .public-nav{margin-left:0;order:3;width:100%;justify-content:center;padding-top:9px;border-top:1px solid #294031}#public-auth{gap:12px}#main-header .brand-title{font-size:14px}#main-header .brand-sub{display:none}#main-header .brand-glyph{width:30px;height:32px}#main-header .public-nav a{font-size:12px}.faultline-workflow{grid-template-columns:1fr;gap:24px}.workflow-step{padding:20px;display:grid;grid-template-columns:36px minmax(0,1fr);gap:5px 18px}.workflow-step-top{grid-row:span 2;display:grid;gap:8px;margin:0;align-content:start}.workflow-step strong{font-size:15px;margin:0}.workflow-step>span:last-child{font-size:13px;grid-column:2}.workflow-step:not(:last-child):after{content:'↓';right:auto;left:50%;top:auto;bottom:-24px;transform:translateX(-50%);font-size:20px}.workflow-explanation{grid-template-columns:1fr;gap:10px;margin-top:24px;padding:22px 0}.workflow-explanation p{font-size:13px}.workflow-step.selected:after{animation:none}}
+@media(max-width:420px){#main-header .header-container{padding:14px 16px;gap:10px}#main-header .brand-title{font-size:11px;letter-spacing:.05em}#main-header .header-brand{gap:8px}#public-auth{gap:10px}#public-auth .public-get-started,#public-auth .public-dashboard{padding:11px 12px;font-size:11px}#public-auth .public-sign-in{font-size:11px}#public-auth .public-account summary{width:36px;height:36px}.workflow-explanation{min-height:180px}}
+@media(prefers-reduced-motion:reduce){.workflow-step,.workflow-step:after{animation:none!important;transition:none!important}.workflow-step:hover{transform:none}}

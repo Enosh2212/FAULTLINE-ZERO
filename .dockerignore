@@ -1,0 +1,10 @@
+.git
+.env
+.venv
+__pycache__
+.pytest_cache
+demo-repository
+output
+**/__pycache__
+**/*.pyc
+.playwright-mcp

@@ -1,0 +1,21 @@
+.hero-visual-container.hero-agent-container{height:480px;overflow:visible}
+.hero-agent-container #hero-network-canvas{display:none}
+.hero-agent-scene{background:radial-gradient(ellipse at 50% 55%,#080d0ab8,#080d0a66 42%,transparent 75%);width:100%;height:100%;pointer-events:none;user-select:none}
+.hero-agent-scene svg{width:100%;height:100%;display:block;overflow:visible;font-family:var(--font-sans),sans-serif}
+.hero-agent-container .canvas-caption-bar{bottom:-10px;font-size:10px;color:#9fbea9}
+.hero-floating-agent{animation:hero-agent-hover 5s ease-in-out infinite;transform-origin:300px 210px}
+.hero-agent-eyes{animation:hero-agent-blink 6.8s ease-in-out infinite;transform-origin:300px 200px}
+.agent-shadow{animation:hero-agent-shadow 5s ease-in-out infinite;transform-origin:300px 325px}
+.agent-orbit{animation:hero-agent-data 12s linear infinite}
+.agent-orbit-inner{animation-direction:reverse;animation-duration:18s}
+.agent-data-flow{animation:hero-agent-data 4s linear infinite}
+.hero-agent-scene.is-paused *{animation-play-state:paused}
+@keyframes hero-agent-hover{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-13px) rotate(2deg)}}
+@keyframes hero-agent-blink{0%,46%,50%,100%{transform:scaleY(1)}48%{transform:scaleY(.12)}}
+@keyframes hero-agent-shadow{0%,100%{transform:scaleX(1);opacity:.35}50%{transform:scaleX(.8);opacity:.2}}
+@keyframes hero-agent-data{to{stroke-dashoffset:-120}}
+@media(max-width:1000px) and (min-width:701px){.hero-visual-container.hero-agent-container{height:370px}}
+@media(max-width:700px){.hero-visual-container.hero-agent-container{height:340px;width:100%;margin-bottom:10px}.hero-agent-container .canvas-caption-bar{font-size:9px;bottom:-4px}}
+@media(prefers-reduced-motion:reduce){.hero-agent-scene *{animation:none!important}}
+
+.agent-head-canvas{display:block;width:140px;height:150px;pointer-events:none}

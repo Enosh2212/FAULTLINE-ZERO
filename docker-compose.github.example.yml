@@ -1,0 +1,16 @@
+# Secure local GitHub App credentials mount.
+# Keep the private .pem key file OUTSIDE this repository.
+# To activate with docker compose:
+#   docker compose -f docker-compose.yml -f docker-compose.github.example.yml up -d
+# or copy/merge into docker-compose.override.yml
+services:
+  api:
+    environment:
+      FZ_GITHUB_APP_ID: ${FZ_GITHUB_APP_ID}
+      FZ_GITHUB_APP_PRIVATE_KEY_PATH: /run/secrets/github-app.pem
+      FZ_GITHUB_WEBHOOK_SECRET: ${FZ_GITHUB_WEBHOOK_SECRET}
+    volumes:
+      - type: bind
+        source: ${FZ_GITHUB_APP_PRIVATE_KEY_FILE:?Set FZ_GITHUB_APP_PRIVATE_KEY_FILE to your .pem file on Windows host outside repository}
+        target: /run/secrets/github-app.pem
+        read_only: true

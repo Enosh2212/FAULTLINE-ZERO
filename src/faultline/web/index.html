@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#020403" />
+  <meta name="description" content="FAULTLINE ZERO — Autonomous Pre-Merge Regression Intelligence Agent. Your tests passed. Your code can still break." />
+  <title>FAULTLINE ZERO — Autonomous Pre-Merge Regression Intelligence</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <script src="/assets/vendor/cytoscape.min.js"></script>
+  <script src="/assets/vendor/elk.bundled.js"></script>
+  <link rel="stylesheet" href="/assets/product.css" />
+  <link rel="stylesheet" href="/assets/landing-motion.css" />
+  <link rel="stylesheet" href="/assets/hero-ascii.css" />
+  <link rel="stylesheet" href="/assets/interactions.css" />
+  <link rel="stylesheet" href="/assets/verification-loader.css" />
+  <link rel="stylesheet" href="/assets/hero-agent.css" />
+  <link rel="stylesheet" href="/assets/landing-type.css" />
+  <script type="module" src="/assets/interactions.js"></script>
+  <script type="module" src="/assets/hero-ascii.js"></script>
+  <script type="module" src="/assets/particle-headline.js"></script>
+  <script type="module" src="/assets/landing-motion.js"></script>
+  <link rel="stylesheet" href="/assets/workspace.css?v=final-ui-2" />
+  <link rel="stylesheet" href="/assets/public-ui.css?v=final-ui-2" />
+  <script type="module" src="/assets/app.js?v=final-ui-2"></script>
+</head>
+<body class="theme-synthora">
+  <!-- AMBIENT DEPTH LIGHTING & PERSPECTIVE GRID -->
+  <div class="ambient-glow glow-emerald" aria-hidden="true"></div>
+  <div class="ambient-glow glow-mint" aria-hidden="true"></div>
+  <div class="spatial-grid-overlay" aria-hidden="true"></div>
+
+  <!-- FLOATING LIQUID GLASS NAVIGATION BAR -->
+  <header class="liquid-header" id="main-header">
+    <div class="header-container">
+      <div class="header-brand" id="brand-home-trigger" role="button" tabindex="0">
+        <div class="brand-glyph" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">FAULTLINE <strong>ZERO</strong></span>
+          <span class="brand-sub">GRAPH INTELLIGENCE</span>
+        </div>
+      </div>
+
+      <nav class="public-nav" aria-label="Public navigation"><a href="/#landing" id="public-how-link">How It Works</a></nav>
+      <div id="public-auth" data-state="loading"><span class="public-session-status" role="status">Checking session…</span></div>
+      <div class="legacy-header-controls" hidden>
+      <!-- MAIN APP & SITE NAVIGATION -->
+      <nav class="liquid-nav" id="view-nav" aria-label="Main Navigation">
+        <button class="nav-item active" data-view="landing" id="nav-landing">
+          <svg class="nav-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          <span>Platform</span>
+        </button>
+        <button class="nav-item" data-view="investigation" id="nav-investigation">
+          <svg class="nav-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <span>Investigation</span>
+        </button>
+        <button class="nav-item" data-view="overview" id="nav-overview">
+          <svg class="nav-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Graph</span>
+        </button>
+        <button class="nav-item" data-view="project" id="nav-project"><span>Project</span></button>
+        <button class="nav-item" data-view="history" id="nav-history">
+          <svg class="nav-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Memory</span>
+        </button>
+        <button class="nav-item" data-view="saas" id="nav-saas">
+          <svg class="nav-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          <span>GitHub SaaS</span>
+        </button>
+        <button class="nav-item" data-view="settings" id="nav-settings">
+          <svg class="nav-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <span>Docs</span>
+        </button>
+      </nav>
+
+      <!-- SYSTEM STATUS & PRIMARY CTA -->
+      <div class="header-actions">
+        <a class="landing-auth-link landing-sign-in" id="legacy-sign-in" href="/login">Sign in</a>
+        <a class="landing-auth-link landing-create-account" id="legacy-create-account" href="/register">Create account <span aria-hidden="true">↗</span></a>
+        <button class="glass-pill-btn" id="open-explainer-btn" title="View 15-Second Architecture Guide">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <span>How It Works</span>
+        </button>
+        <div class="status-indicator-pill" id="tenant-status-badge" title="Tenant Organization & RBAC Session">
+          <span class="indicator-dot" style="background:#4ade80;box-shadow:0 0 8px #4ade80;"></span>
+          <span class="indicator-label" id="tenant-status-label">Default Org</span>
+        </div>
+        <div class="status-indicator-pill" id="graph-status-badge" title="FalkorDB Graph Connection">
+          <span class="indicator-dot" id="graph-status-dot"></span>
+          <span class="indicator-label">FalkorDB</span>
+        </div>
+        <div class="status-indicator-pill" id="model-status-badge" title="Configured Model Tool Agent">
+          <span class="indicator-dot" id="model-status-dot"></span>
+          <span class="indicator-label" id="model-status-label">Groq 120B</span>
+        </div>
+        <button class="cta-liquid-btn" id="btn-header-cta">
+          <span>Launch Agent</span>
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       EXPERIENCE A: PUBLIC LANDING PAGE (SYNTHORA AESTHETIC)
+       ========================================================================= -->
+  <div class="app-view active" id="view-landing">
+    <!-- HERO SECTION -->
+    <section class="landing-hero-section" id="landing-main" tabindex="-1" aria-label="FAULTLINE ZERO overview">
+      <canvas id="hero-ascii-canvas" aria-hidden="true"></canvas>
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-pulse-dot"></span>
+          <span class="badge-text">PRE-MERGE REGRESSION INTELLIGENCE</span>
+        </div>
+
+        <h1 class="hero-headline">
+          Your tests passed.<br />
+          <span class="gradient-headline">Your code can still break.</span>
+        </h1>
+
+        <h2 class="hero-supporting-headline"><span class="hero-hook-line">Git shows what changed.</span> <span class="hero-hook-line">FAULTLINE investigates what it could break.</span></h2>
+        <p class="hero-subhead">
+          FAULTLINE ZERO traces code changes through connected services and business rules, then runs targeted verification to uncover regressions before merge.
+        </p>
+
+        <div class="hero-cta-group">
+          <button class="hero-primary-btn" id="btn-hero-explore">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <span>Explore sample investigation</span>
+          </button>
+          <button class="hero-secondary-btn" id="btn-hero-how">
+            <span>How It Works</span>
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </div>
+
+        <p class="hero-demo-boundary">Connect authorized GitHub repositories for read-only Python static analysis. Runtime verification is limited to approved execution coverage; the sample demo uses a controlled repository.</p>
+        <div class="hero-meta-strip" aria-label="Investigation workflow">
+          <span class="meta-tag"><b>01</b> Git diff</span><span class="meta-sep" aria-hidden="true">/</span>
+          <span class="meta-tag"><b>02</b> Connected impact</span><span class="meta-sep" aria-hidden="true">/</span>
+          <span class="meta-tag"><b>03</b> Execution evidence</span>
+        </div>
+      </div>
+
+      <!-- 3D SPATIAL DEPENDENCY NETWORK VISUALIZATION -->
+      <div class="hero-visual-container">
+        <div class="canvas-ambient-backdrop"></div>
+        <canvas id="hero-network-canvas" class="hero-canvas"></canvas>
+        <div class="canvas-caption-bar">
+          <span class="live-pulse-badge"></span>
+          <span>Change → dependency → invariant → verification · Illustrative journey</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section" id="section-how-it-works" aria-labelledby="workflow-heading">
+      <div class="section-container">
+        <div class="section-header"><span class="section-kicker">ILLUSTRATIVE PRODUCT WORKFLOW · NOT LIVE STATUS</span><h2 class="section-title" id="workflow-heading">How FAULTLINE works.</h2><p class="section-desc">From authorized source to a scoped, evidence-backed PR check.</p></div>
+        <div id="faultline-workflow" class="faultline-workflow" role="group" aria-label="Explore the product workflow"></div>
+        <section id="workflow-explanation" class="workflow-explanation" aria-live="polite" aria-atomic="true"></section>
+      </div>
+    </section>
+
+    <!-- LIVE EVIDENCE PROOF SHOWCASE -->
+    <section class="landing-section" id="section-evidence">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-kicker">THE PROOF MOMENT</span>
+          <h2 class="section-title">Different changes. Verifiable findings.</h2>
+          <p class="section-desc">Representative workflows from the controlled demo repository. Results below come from saved, executed investigations.</p>
+        </div>
+
+        <div class="evidence-interactive-deck">
+          <div class="evidence-tabs">
+            <button class="evidence-tab-btn active" data-evidence="payment">
+              <span>Payment idempotency</span>
+              <span class="badge-status-reproduced">REPRODUCED</span>
+            </button>
+            <button class="evidence-tab-btn" data-evidence="inventory">
+              <span>Inventory integrity</span>
+              <span class="badge-status-reproduced">REPRODUCED</span>
+            </button>
+            <button class="evidence-tab-btn" data-evidence="refund">
+              <span>Refund duplication</span>
+              <span class="badge-status-dynamic">SYNTHESIZED</span>
+            </button>
+          </div>
+
+          <div class="evidence-display-box liquid-card" id="evidence-display-card" aria-live="polite"><p>Loading verified evidence…</p></div>
+          <button class="hero-secondary-btn" id="open-demo-investigation">Open this investigation →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCHITECTURE & GITHUB WORKFLOW -->
+    <!-- THE PROBLEM SECTION -->
+    <section class="landing-section" id="section-problem">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-kicker">WHY GRAPH CONTEXT MATTERS</span>
+          <h2 class="section-title">The bugs between your tests.</h2>
+          <p class="section-desc">Conventional CI pipelines run isolated tests against isolated components. They miss the cross-service boundaries where distributed systems actually fail.</p>
+        </div>
+
+        <div class="problem-cards-grid">
+          <div class="liquid-card problem-card">
+            <div class="card-icon-wrap">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+            </div>
+            <h3>CI misses cross-service bugs</h3>
+            <p>Isolated tests can miss the relationships between changed code and the services that rely on it.</p>
+          </div>
+
+          <div class="liquid-card problem-card">
+            <div class="card-icon-wrap">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            </div>
+            <h3>Business rules need verification</h3>
+            <p>Important business rules may have no test for the behavior a change affects.</p>
+          </div>
+
+          <div class="liquid-card problem-card">
+            <div class="card-icon-wrap">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <h3>Follow the connected evidence</h3>
+            <p>Connected context guides the investigation toward relevant rules and executable scenarios. Observed outcomes supply the proof.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- FINAL CTA SECTION -->
+    <section class="landing-cta-section">
+      <div class="cta-inner liquid-card">
+        <span class="section-kicker">GET STARTED</span>
+        <h2>Stop merging regressions into production</h2>
+        <p>Connect a GitHub repository for Python static analysis, or explore the isolated commerce demo with approved execution scenarios.</p>
+        <button class="hero-primary-btn" id="btn-final-cta">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <span>Launch Live Investigation Agent</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- LANDING FOOTER -->
+    <footer class="landing-footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <span>FAULTLINE <strong>ZERO</strong></span>
+          <p>Graph-Native Autonomous Pre-Merge Regression Intelligence Agent.</p>
+        </div>
+        <div class="footer-meta">
+          <span>WeMakeDevs × FalkorDB Graph Hacks 2026</span>
+          <span class="footer-sep">•</span>
+          <span>MIT License · Open Architecture</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- =========================================================================
+       EXPERIENCE B & C: WORKSPACE SHELL (INVESTIGATION & DASHBOARD)
+       ========================================================================= -->
+  <div class="workspace-shell">
+    <!-- COMMAND BAR (PERSISTENT & VISIBLE ON 1366x768 WITHOUT SCROLLING) -->
+    <section class="liquid-command-bar" aria-label="Investigation Command Bar">
+      <div class="command-fields">
+        <div class="command-field">
+          <label class="field-label" for="repo-select">REPOSITORY</label>
+          <div class="select-wrapper">
+            <select id="repo-select" class="field-select">
+              <option value="trusted-commerce">Trusted commerce · local demo</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="command-field change-field">
+          <label class="field-label" for="change-select">CHANGE TO INVESTIGATE</label>
+          <div class="select-wrapper">
+            <select id="change-select" class="field-select primary-select">
+              <option value="payment" selected>Payment · Webhook retry duplicate capture regression</option>
+              <option value="inventory">Inventory · Missing lock oversell regression</option>
+              <option value="control">Pricing · Safe refactor with invariants preserved (Clean Control)</option>
+              <option value="uncovered">Shipping · Incomplete invariant coverage (Uncovered Invariant)</option>
+              <option value="refund">Refunds · Holdout duplicate refund race (Dynamic Counterexample)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="command-field">
+          <label class="field-label" for="execution-mode">EXECUTION MODE</label>
+          <div class="select-wrapper">
+            <select id="execution-mode" class="field-select">
+              <option value="auto">Auto · Model when configured</option>
+              <option value="deterministic">Deterministic Graph Traversal</option>
+              <option value="model">Require Model Tool Calling</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="command-actions">
+        <button id="run-button" class="run-cta-btn" disabled>
+          <span class="btn-spinner" id="btn-spinner"></span>
+          <svg class="btn-icon" id="run-icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <span class="btn-caption" id="run-text">Run Investigation</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- VIEW 1: INVESTIGATION WORKSPACE (EXPERIENCE C) -->
+    <main class="app-view" id="view-investigation">
+  <div id="demo-workspace-banner" hidden><span>DEMO / PLAYGROUND &middot; Isolated synthetic commerce repository</span><a href="/workspace#workspace/overview">Open your workspace &nearr;</a></div>
+
+      <div class="report-context"><div><span class="context-eyebrow">TRUSTED COMMERCE / LOCAL GIT DEMO</span><p id="context-change">Payment investigation</p></div><div class="report-mode-controls"><span id="execution-status" role="status">Ready</span><div class="display-mode" role="group" aria-label="Report display mode"><button id="simple-mode" aria-pressed="true">Simple</button><button id="technical-mode" aria-pressed="false">Technical</button></div></div></div>
+      <div id="report-root" aria-live="polite"></div>
+      <section class="supporting-evidence" aria-label="Supporting evidence">
+        <div class="evidence-heading"><span class="section-kicker">FOLLOW THE EVIDENCE</span><h2>Understand the path behind the finding.</h2><p>Explore the connections, code, and execution record when you need more context.</p></div>
+        <details id="graph-disclosure" class="evidence-disclosure"><summary><span>Explore Evidence Graph<small>Code change, connected services, and the verified business rule</small></span><span aria-hidden="true">↗</span></summary><div id="evidence-graph" class="graph-experience"></div><div id="execution-annotation" class="execution-annotation"></div></details>
+        <details id="diff-disclosure" class="evidence-disclosure"><summary><span>View Git Diff<small>Original and modified revisions</small></span><span aria-hidden="true">+</span></summary><div class="revision-line" id="diff-revisions"></div><pre id="diff-code-view" class="diff-code-view">Select a change to read its Git diff.</pre></details>
+        <details id="tools-disclosure" class="evidence-disclosure"><summary><span>Inspect Agent Tool Calls<small>Actual tool results and parameters</small></span><span aria-hidden="true">+</span></summary><div id="tool-traces"></div></details>
+        <details id="reproduce-disclosure" class="evidence-disclosure"><summary><span>Reproduce Locally<small>Approved verification scenarios and execution commands</small></span><span aria-hidden="true">+</span></summary><div class="reproduction-heading"><p>Run these commands inside the application container. Generated scenarios use the approved scenario interpreter.</p><button id="copy-reproduction" class="copy-cmd-btn">Copy command</button></div><pre id="reproduction-command" class="agent-terminal">Run an investigation first.</pre><div id="scenario-specs"></div></details>
+        <details id="flymemory-disclosure" class="evidence-disclosure"><summary><span>Related Past Investigations (FlyMemory)<small>Bio-inspired associative memory &amp; FalkorDB graph grounding</small></span><span aria-hidden="true">+</span></summary>
+          <div class="flymemory-container">
+            <div class="flymemory-header">
+              <div>
+                <span class="badge-bio">FLYMEMORY // EXPERIMENTAL</span>
+                <p class="flymemory-subtitle">Fruit-fly-inspired sparse hashing (Fly-LSH) with FalkorDB topological validation.</p>
+              </div>
+              <div class="flymemory-toggle-group">
+                <label class="switch-label">
+                  <input type="checkbox" id="flymemory-toggle">
+                  <span class="switch-text">Use Bio-Inspired Memory Retrieval</span>
+                </label>
+              </div>
+            </div>
+            <div id="flymemory-list" class="flymemory-list">
+              <div class="empty-memory-state">Select a change and run an investigation to view associative historical memories.</div>
+            </div>
+          </div>
+        </details>
+        <details id="terminal-disclosure" class="evidence-disclosure"><summary><span>Investigation Terminal<small>Complete execution log</small></span><span aria-hidden="true">+</span></summary><div class="terminal-toolbar"><p>Report-backed execution output. Commands are reproducible equivalents.</p><div class="terminal-actions"><button id="terminal-run" class="primary-action-btn" disabled>Run investigation</button><button id="terminal-copy" class="copy-cmd-btn">Copy log</button></div></div><pre id="agent-terminal" class="agent-terminal" role="log">Ready. Run an investigation to view execution output.</pre></details>
+      </section>
+    </main>
+
+    <section class="app-view" id="view-overview">
+      <div class="explorer-heading"><div><span class="section-kicker">FALKORDB / KNOWLEDGE EXPLORER</span><h1>Start with the system.<br><span>Explore one connection at a time.</span></h1><p>Live persisted relationships. Begin with services, then expand only the context you need.</p></div><button id="explorer-home" class="hero-secondary-btn">Reset to services</button></div>
+      <div id="knowledge-graph" class="graph-experience"></div>
+      <p class="explorer-footnote" id="explorer-footnote"></p>
+    </section>
+
+    <section class="app-view" id="view-project"><div id="project-understanding"></div></section>
+
+    <!-- VIEW 3: AUDIT HISTORY -->
+    <section class="app-view" id="view-history">
+      <div class="view-inner-wrap">
+        <div class="view-header">
+          <div>
+            <span class="stage-kicker">AUDIT MEMORY</span>
+            <h2>Investigation History</h2>
+            <p class="view-desc">Persistent historical audit records stored in FalkorDB.</p>
+          </div>
+          <div class="history-actions-bar">
+            <input type="text" id="history-filter-input" class="search-input" placeholder="Filter by report ID or title…" />
+            <button class="action-btn" id="history-refresh-btn" title="Refresh history">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="table-container liquid-card">
+          <table class="audit-table" id="audit-table">
+            <thead>
+              <tr>
+                <th>Investigation ID</th>
+                <th>Target Change</th>
+                <th>Verdict</th>
+                <th>Mode</th>
+                <th>Cases Run</th>
+                <th>Duration</th>
+                <th>Timestamp</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="audit-table-body">
+              <tr><td colspan="8" class="text-center">Loading audit records from FalkorDB…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 4: AGENT MEMORY & INVARIANTS -->
+    <section class="app-view" id="view-memory">
+      <div class="view-inner-wrap">
+        <div class="view-header">
+          <div>
+            <span class="stage-kicker">COVERAGE & MEMORY</span>
+            <h2>Business Invariant Registry & Counterexamples</h2>
+            <p class="view-desc">Audited business rules, empirical validation status, and discovered dynamic counterexamples.</p>
+          </div>
+        </div>
+
+        <div class="memory-grid">
+          <div class="memory-panel liquid-card">
+            <h3>Discovered Counterexample Scenarios</h3>
+            <p class="panel-subtitle">Synthesized scenarios persisted to FalkorDB covering previously untested invariants.</p>
+            <div class="table-container">
+              <table class="audit-table" id="memory-scenarios-table">
+                <thead>
+                  <tr>
+                    <th>Scenario ID</th>
+                    <th>Target Rule</th>
+                    <th>Enforcing Service</th>
+                    <th>Ordered Actions</th>
+                    <th>Expected Result</th>
+                  </tr>
+                </thead>
+                <tbody id="memory-scenarios-body">
+                  <tr><td colspan="5" class="text-center">No dynamic scenarios discovered in this session yet.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="memory-panel liquid-card">
+            <h3>Business Invariant Registry</h3>
+            <p class="panel-subtitle">Audited business rules and their empirical verification status.</p>
+            <div class="table-container">
+              <table class="audit-table" id="memory-invariants-table">
+                <thead>
+                  <tr>
+                    <th>Invariant ID</th>
+                    <th>Description</th>
+                    <th>Service</th>
+                    <th>Empirical Status</th>
+                  </tr>
+                </thead>
+                <tbody id="memory-invariants-body">
+                  <tr>
+                    <td><code>INV-PAY-01</code></td>
+                    <td>Exactly one payment capture per event</td>
+                    <td><code>S-PAYMENTS</code></td>
+                    <td><span class="badge-status-reproduced">REGRESSION REPRODUCED</span></td>
+                  </tr>
+                  <tr>
+                    <td><code>INV-STOCK-01</code></td>
+                    <td>Stock levels are never negative</td>
+                    <td><code>S-INVENTORY</code></td>
+                    <td><span class="badge-status-reproduced">REGRESSION REPRODUCED</span></td>
+                  </tr>
+                  <tr>
+                    <td><code>INV-ORDER-01</code></td>
+                    <td>Order total is non-negative</td>
+                    <td><code>S-ORDERS</code></td>
+                    <td><span class="badge-status-safe">CLEAN CONTROL PASS</span></td>
+                  </tr>
+                  <tr>
+                    <td><code>INV-REFUND-01</code></td>
+                    <td>Refund idempotency & ledger consistency</td>
+                    <td><code>S-REFUNDS</code></td>
+                    <td><span class="badge-status-dynamic">DISCOVERED COUNTEREXAMPLE</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 5: SETTINGS & DIAGNOSTICS -->
+    <section class="app-view" id="view-settings">
+      <div class="view-inner-wrap">
+        <div class="view-header">
+          <div>
+            <span class="stage-kicker">CONFIGURATION</span>
+            <h2>Settings & Diagnostic Probes</h2>
+            <p class="view-desc">Live FalkorDB status, AI model latency probes, and authentication.</p>
+          </div>
+        </div>
+
+        <details class="evidence-disclosure docs-github"><summary><span>Future GitHub Checks integration<small>Architecture plan · not an active integration</small></span><span>+</span></summary><p>Pull request opened → GitHub App webhook → investigation worker → FalkorDB context → AI-assisted investigation → verified test results → GitHub check conclusion → deep link to the saved FAULTLINE report.</p><p>The local PR-check presentation is advisory. No GitHub check or branch protection rule is created by this demo.</p><p>A future integration should verify webhook signatures, authorize repository access, enqueue idempotent work, and publish a check only after the execution policy produces a result. Provider or infrastructure failures must remain errors or inconclusive outcomes.</p></details>
+        <div class="settings-grid">
+          <div class="settings-card liquid-card">
+            <h3>FalkorDB Graph Store</h3>
+            <div class="prop-list">
+              <div class="prop-item"><span>Host:</span><code>graph (Docker) / localhost</code></div>
+              <div class="prop-item"><span>Port:</span><code>6379</code></div>
+              <div class="prop-item"><span>Graph Name:</span><code>faultline_zero</code></div>
+              <div class="prop-item"><span>Status:</span><span class="badge-status-safe" id="cfg-graph-status">CONNECTED</span></div>
+            </div>
+          </div>
+
+          <div class="settings-card liquid-card">
+            <h3>AI Provider & Model Probe</h3>
+            <div class="prop-list">
+              <div class="prop-item"><span>Provider:</span><strong>Groq (OpenAI Compatible)</strong></div>
+              <div class="prop-item"><span>Model:</span><code>See provider probe</code></div>
+              <div class="prop-item"><span>Base URL:</span><code>Server-configured endpoint</code></div>
+              <div class="prop-item"><span>Credentials:</span><span>Stored on the server; verify connection below</span></div>
+            </div>
+            <div class="provider-probe-action">
+              <button class="primary-action-btn" id="btn-test-provider">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                <span>Probe Live Provider Connectivity & Latency</span>
+              </button>
+              <div class="provider-probe-output" id="provider-probe-output"></div>
+            </div>
+          </div>
+
+          <div class="settings-card liquid-card">
+            <h3>API Authentication</h3>
+            <p class="panel-subtitle">Optional Bearer token for protected endpoints. Stored in session memory.</p>
+            <div class="token-input-group">
+              <input type="password" id="bearer-token-input" class="field-select" placeholder="Enter Bearer token (leave blank for local demo)" />
+              <button class="primary-action-btn" id="btn-save-token">Save Token</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 6: GITHUB SAAS & CONNECTED REPOSITORIES -->
+    <section class="app-view" id="view-saas">
+      <div class="view-inner-wrap">
+        <div class="view-header">
+          <div>
+            <span class="stage-kicker">ENTERPRISE SAAS PLATFORM</span>
+            <h2>GitHub App & Repository Intelligence</h2>
+            <p class="view-desc">Tenant-isolated repositories, GitHub Checks pre-merge gate, and verified AST investigation.</p>
+          </div>
+        </div>
+
+        <div class="saas-boundary-banner" style="background:#0e1c14;border:1px solid #22c55e33;border-radius:10px;padding:18px 24px;margin-bottom:28px;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;">
+            <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4ade80;box-shadow:0 0 8px #4ade80;"></span>
+            <strong style="color:#d1fae5;font-size:13px;letter-spacing:0.5px;">SECURE EXECUTION BOUNDARY: STRICTLY READ-ONLY STATIC ANALYSIS</strong>
+          </div>
+          <p style="font-size:12px;color:#a7f3d0;line-height:1.8;margin:0;">
+            External GitHub pull requests undergo <strong>read-only static AST and FalkorDB knowledge graph traversal</strong>.
+            Arbitrary test scripts and untrusted packages are <strong>NEVER executed on the host system</strong> in Phase 1. Differential execution is strictly confined to the trusted internal commerce testbed.
+          </p>
+        </div>
+
+        <div class="settings-grid" style="margin-bottom:30px;">
+          <!-- CARD 1: TENANT IDENTITY -->
+          <div class="settings-card liquid-card">
+            <h3>Tenant Organization</h3>
+            <div class="prop-list">
+              <div class="prop-item"><span>Organization:</span><strong id="saas-org-name">Default Organization</strong></div>
+              <div class="prop-item"><span>Slug:</span><code id="saas-org-slug">default-org</code></div>
+              <div class="prop-item"><span>Billing Tier:</span><span class="badge-status-safe" id="saas-billing-tier">ENTERPRISE</span></div>
+              <div class="prop-item"><span>Active User:</span><code id="saas-user-email">developer@faultlinezero.local</code></div>
+              <div class="prop-item"><span>Role:</span><span id="saas-user-role" style="color:#86efac;font-weight:600;">OWNER</span></div>
+            </div>
+            <div style="margin-top:20px;display:flex;gap:10px;">
+              <button class="hero-secondary-btn" id="btn-saas-logout" style="font-size:11px;padding:8px 14px;">Sign Out</button>
+            </div>
+          </div>
+
+          <!-- CARD 2: GITHUB APP ONBOARDING -->
+          <div class="settings-card liquid-card">
+            <h3>GitHub App Integration</h3>
+            <p class="panel-subtitle">Connect your GitHub organization or repositories to activate autonomous pre-merge checks.</p>
+            <div class="prop-list">
+              <div class="prop-item"><span>App Scope:</span><code>Pull Requests, Checks (RW)</code></div>
+              <div class="prop-item"><span>Status:</span><span class="badge-status-safe" id="saas-github-status">READY / CONNECTED</span></div>
+              <div class="prop-item"><span>Installation ID:</span><code id="saas-install-id">Auto-Linked</code></div>
+            </div>
+            <div style="margin-top:20px;display:flex;gap:10px;">
+              <button class="primary-action-btn" id="btn-install-github-app" style="font-size:12px;padding:10px 16px;">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                <span>Install GitHub App</span>
+              </button>
+              <button class="hero-secondary-btn" id="btn-resync-repos" style="font-size:12px;padding:10px 16px;">Resync Repositories</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- REPOSITORIES TABLE -->
+        <div class="liquid-card" style="padding:28px 30px;margin-bottom:30px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+            <div>
+              <span class="stage-kicker">SYNCHRONIZED REPOSITORIES</span>
+              <h3 style="font-size:18px;margin:4px 0;">Tenant Monitored Codebases</h3>
+            </div>
+            <span style="font-size:11px;color:#86efac;" id="saas-repo-count">Loading…</span>
+          </div>
+          <div style="overflow-x:auto;">
+            <table style="width:100%;border-collapse:collapse;font-size:12px;text-align:left;">
+              <thead>
+                <tr style="border-bottom:1px solid #ffffff15;color:#94a3b8;font-size:11px;text-transform:uppercase;letter-spacing:1px;">
+                  <th style="padding:10px 12px;">Repository</th>
+                  <th style="padding:10px 12px;">Visibility</th>
+                  <th style="padding:10px 12px;">Default Branch</th>
+                  <th style="padding:10px 12px;">Open PRs</th>
+                  <th style="padding:10px 12px;">Latest Check Verdict</th>
+                </tr>
+              </thead>
+              <tbody id="saas-repos-tbody">
+                <tr><td colspan="5" style="padding:18px;text-align:center;color:#94a3b8;">Loading repositories…</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- PRE-MERGE CHECKS FEED -->
+        <div class="liquid-card" style="padding:28px 30px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+            <div>
+              <span class="stage-kicker">GITHUB CHECKS API</span>
+              <h3 style="font-size:18px;margin:4px 0;">Pre-Merge Regression Gate Audit Trail</h3>
+            </div>
+            <span style="font-size:11px;color:#94a3b8;">HMAC-SHA256 Webhook Verified</span>
+          </div>
+          <div id="saas-checks-feed" style="display:flex;flex-direction:column;gap:14px;">
+            <div style="padding:16px;background:#0d1510;border:1px solid #ffffff0d;border-radius:8px;font-size:12px;color:#94a3b8;">
+              Listening for GitHub pull request webhook events. Webhook deliveries automatically trigger read-only AST blast radius analysis and update GitHub Checks API.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 15-SECOND COMPREHENSION MODAL -->
+  <dialog class="explainer-dialog" id="explainer-modal">
+    <div class="dialog-card liquid-card">
+      <div class="dialog-header">
+        <div class="dialog-title-wrap">
+          <span class="stage-kicker">15-SECOND ARCHITECTURE GUIDE</span>
+          <h3>Understanding FAULTLINE ZERO</h3>
+        </div>
+        <button class="dialog-close-btn" id="close-explainer-btn" aria-label="Close dialog">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <div class="dialog-body">
+        <div class="explainer-grid">
+          <div class="explainer-block">
+            <div class="block-icon">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <strong>1. What FAULTLINE ZERO Does</strong>
+            <p>Prevents silent regressions from shipping by deploying an autonomous investigator that empirically proves whether a candidate Git change breaks independently declared business invariants.</p>
+          </div>
+
+          <div class="explainer-block">
+            <div class="block-icon">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            </div>
+            <strong>2. What FalkorDB Contributes</strong>
+            <p>Provides multi-hop connected intelligence. Instead of running random tests, FalkorDB traces <code>Change → Symbol → Service → CALLS* → Invariant</code>, identifying exactly which business rules are vulnerable.</p>
+          </div>
+
+          <div class="explainer-block">
+            <div class="block-icon">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06-.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            </div>
+            <strong>3. What the AI Agent Investigates</strong>
+            <p>Analyzes diffs, queries FalkorDB, detects invariants that lack pre-existing tests, and synthesizes schema-validated <code>ScenarioSpec</code> counterexamples to stress-test the change.</p>
+          </div>
+
+          <div class="explainer-block">
+            <div class="block-icon">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <strong>4. How Regression is Proven</strong>
+            <p>Executes identical tests against isolated baseline and candidate revisions. If baseline passes and candidate fails, a true regression is empirically verified without hallucination.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

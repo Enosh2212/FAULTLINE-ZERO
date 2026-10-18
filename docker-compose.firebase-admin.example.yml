@@ -1,0 +1,16 @@
+# Secure local Firebase Admin credentials mount.
+# Keep the actual service account JSON file OUTSIDE this repository.
+# To activate with docker compose:
+#   docker compose -f docker-compose.yml -f docker-compose.firebase-admin.example.yml up -d
+# or copy this file to docker-compose.override.yml
+services:
+  api:
+    environment:
+      FZ_FIREBASE_PROJECT_ID: ${FZ_FIREBASE_PROJECT_ID:-faultime-66bce}
+      FZ_FIREBASE_CREDENTIALS_PATH: /run/secrets/firebase-admin.json
+      GOOGLE_APPLICATION_CREDENTIALS: /run/secrets/firebase-admin.json
+    volumes:
+      - type: bind
+        source: ${GOOGLE_APPLICATION_CREDENTIALS:-${FZ_FIREBASE_ADMIN_FILE:?Set GOOGLE_APPLICATION_CREDENTIALS or FZ_FIREBASE_ADMIN_FILE to a file outside repository}}
+        target: /run/secrets/firebase-admin.json
+        read_only: true

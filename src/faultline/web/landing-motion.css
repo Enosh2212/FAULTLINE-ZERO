@@ -1,0 +1,114 @@
+/* Reference-inspired bento composition, fanned cards, and restrained emerald light. */
+#view-landing{overflow:clip}
+#view-landing .landing-section{padding:112px 40px;border-top:0;position:relative}
+#view-landing .section-container{max-width:1080px;margin:auto;gap:28px}
+#view-landing .section-header{align-items:center;text-align:center;max-width:760px;margin:0 auto 44px}
+#view-landing .section-title{font-size:clamp(30px,3.4vw,46px);font-weight:450;letter-spacing:-1.4px;line-height:1.17}
+#view-landing .section-desc{max-width:610px;margin-top:16px}
+#view-landing .pipeline-stages-grid{grid-template-columns:repeat(12,minmax(0,1fr));gap:22px;perspective:1200px;padding:12px}
+#view-landing .stage-card{grid-column:span 5;min-height:310px;padding:34px 36px;gap:12px;border:1px solid #8cc6a02b!important;border-radius:24px;background:radial-gradient(ellipse at 100% 0%,#80d6a01c,transparent 65%),linear-gradient(145deg,#15271c,#0c130f 75%);box-shadow:0 20px 55px #0005;overflow:hidden;isolation:isolate;transform:translateY(var(--drift,0px)) rotate(var(--turn,0deg));transition:transform .6s cubic-bezier(.2,.7,.2,1),border-color .3s,box-shadow .3s}
+#view-landing .stage-card:nth-child(2),#view-landing .stage-card:nth-child(3){grid-column:span 7}
+#view-landing .stage-card:nth-child(1){background:radial-gradient(at 15% 0%,#7be9b13d,transparent 80%),linear-gradient(145deg,#245c3e,#123723)}
+#view-landing .stage-card:nth-child(2){margin-top:20px;margin-bottom:-20px}
+#view-landing .stage-card:nth-child(3){margin-top:4px}
+#view-landing .stage-card:nth-child(4){margin-top:24px}
+#view-landing .stage-num{font-size:11px;letter-spacing:2px;color:#acd9bd}
+#view-landing .stage-badge{display:block;position:absolute;top:35px;right:30px;font-size:9px;letter-spacing:1.4px;color:#a7c7b2}
+#view-landing .stage-card h3{font-size:clamp(23px,2.1vw,29px);line-height:1.2;letter-spacing:-.65px;max-width:350px;margin:35px 0 4px;font-weight:500}
+#view-landing .stage-card p{max-width:330px;color:#b1c2b7;font-size:14px;line-height:1.8;flex:0}
+#view-landing .stage-pill{display:block;margin-top:auto;padding-top:20px;font-size:10px;color:#95b8a2;letter-spacing:.15px}
+#view-landing .stage-pill code{color:#c3e4cf;font-size:10px}
+#view-landing .stage-card::after{content:'';position:absolute;z-index:-1;width:200px;height:200px;right:-110px;bottom:-100px;border-radius:50%;border:1px solid #8ce3ad38;box-shadow:0 0 0 30px #8ce3ad08,0 0 0 60px #8ce3ad05}
+#view-landing .stage-card:hover{border-color:#9fdfb961!important;box-shadow:0 25px 65px #0007,0 0 35px #7ee9a50a}
+#view-landing .problem-cards-grid{max-width:940px;align-items:center;margin:22px auto 0;gap:24px;padding:25px 16px 45px;perspective:1100px}
+#view-landing .problem-card{--fan:-5deg;min-height:320px;padding:32px 26px;gap:16px;border:1px solid #a0d6b52a;border-radius:24px;background:radial-gradient(at 50% 100%,#5ba67525,transparent 80%),#111914;box-shadow:0 24px 45px #0005;transform:translateY(var(--drift,0px)) rotate(calc(var(--fan) + var(--turn,0deg)));transition:transform .65s cubic-bezier(.2,.7,.2,1),border-color .3s}
+#view-landing .problem-card:nth-child(2){--fan:0deg;margin-top:-55px;background:linear-gradient(145deg,#265e40,#133324)}
+#view-landing .problem-card:nth-child(3){--fan:5deg}
+#view-landing .card-icon-wrap{display:grid;place-items:center;width:52px;height:52px;border-radius:16px;color:#b8f1ce;background:linear-gradient(145deg,#72c78e35,#122d1d);border:1px solid #9ee1b746;box-shadow:inset 0 1px 0 #d6ffe62a,0 8px 25px #0004;margin-bottom:12px}
+#view-landing .problem-card h3{font-size:21px;line-height:1.3;letter-spacing:-.4px}
+#view-landing .problem-card p{font-size:13px;line-height:1.85;color:#aebfb4}
+#view-landing .problem-card:hover{border-color:#9fdfb961;transform:translateY(-12px) rotate(0deg)}
+#view-landing #section-evidence{padding-top:140px;padding-bottom:130px}
+#view-landing .evidence-interactive-deck{position:relative;padding:32px 40px;border:1px solid #83bd9628;border-radius:24px;background:radial-gradient(ellipse at 80% 0%,#568e6d17,transparent 70%),#0d1510;box-shadow:0 30px 90px #0005}
+#view-landing .evidence-display-box{border-top:0!important;padding-top:10px}
+#view-landing .landing-cta-section{position:relative;padding:130px 24px 150px;isolation:isolate}
+#view-landing .landing-cta-section::before{content:'';position:absolute;z-index:-1;inset:0;pointer-events:none;background:radial-gradient(ellipse 12% 45% at 50% 90%,#a3efc036,transparent 90%),radial-gradient(ellipse 40% 60% at 50% 90%,#32895835,transparent 85%)}
+#view-landing .cta-inner{max-width:830px;border:0;background:transparent;box-shadow:none;padding:30px 20px;gap:24px}
+#view-landing .cta-inner h2{font-size:clamp(32px,4.4vw,58px);font-weight:450;line-height:1.12;letter-spacing:-1.7px;max-width:750px}
+#view-landing .cta-inner p{max-width:510px;font-size:14px;line-height:1.8}
+#view-landing #btn-final-cta{margin-top:18px;border:1px solid #c1f6d1a0;box-shadow:0 0 0 5px #a5efc012,0 0 45px #83e7aa38;transition:box-shadow .3s,transform .3s}
+#view-landing #btn-final-cta:hover{transform:translateY(-3px);box-shadow:0 0 0 7px #a5efc01a,0 0 65px #83e7aa50}
+/* Reversible scroll choreography replaces the previous one-time entrance effects. */
+#view-landing .stage-card{min-height:420px;gap:9px;padding:28px 32px;transform:none;transition:border-color .3s,box-shadow .3s}
+#view-landing .stage-card h3{margin:4px 0 6px;max-width:420px;font-size:27px}
+#view-landing .stage-card p{max-width:400px}
+#view-landing .stage-card::after{display:none}
+#view-landing .stage-badge{top:30px}
+#view-landing .stage-illustration{height:130px;display:grid;place-items:center;color:#83b99b;margin:8px 0 12px;background:radial-gradient(ellipse at center,#6acd9220,transparent 70%);overflow:hidden}
+#view-landing .stage-illustration svg{height:130px;width:100%;max-width:350px;filter:drop-shadow(0 7px 14px #0005)}
+#view-landing .diagram-accent{stroke:#bafbd0;stroke-width:2.5}
+#view-landing .diagram-nodes{fill:#1a3828;stroke:#8fc9a5}
+#view-landing .stage-card:first-child .stage-illustration{color:#a2dab7}
+#view-landing .landing-section{padding-top:85px;padding-bottom:85px}
+#view-landing #section-evidence{padding-top:95px;padding-bottom:90px}
+#view-landing .landing-cta-section{padding-top:75px;padding-bottom:110px}
+#view-landing .section-header{margin-bottom:30px}
+#view-landing.motion-enabled .stage-card{opacity:calc(.25 + var(--enter,1) * .75);transform:translate3d(var(--slide,0px),var(--rise,0px),0) rotate(var(--rotate,0deg)) scale(var(--scale,1));transform-origin:center;transition:border-color .3s,box-shadow .3s}
+#view-landing.motion-enabled .section-header,#view-landing.motion-enabled .evidence-interactive-deck,#view-landing.motion-enabled .cta-inner{opacity:calc(.15 + var(--enter,1) * .85);transform:translate3d(0,var(--rise,0px),0);transition:none}
+#view-landing.motion-enabled .section-title{clip-path:inset(0 0 calc((1 - var(--enter,1)) * 100%))}
+#view-landing .problem-cards-grid{grid-template-columns:repeat(3,minmax(0,1fr));width:100%;max-width:940px;gap:20px;margin-top:12px;padding:25px 16px 45px}
+#view-landing .problem-card{position:relative;min-height:310px;transform:none;transition:border-color .3s,box-shadow .3s}
+#view-landing .problem-card:nth-child(2){margin-top:0;z-index:2}
+#view-landing .problem-card h3{font-size:20px}
+#view-landing .problem-card p{font-size:13px}
+#view-landing .problem-card:hover{transform:none;box-shadow:0 20px 70px #5dd48d15}
+#view-landing .card-icon-wrap{width:60px;height:60px;margin-bottom:12px;border-radius:18px}
+#view-landing .card-icon-wrap svg{width:25px;height:25px}
+@media(min-width:701px) and (min-height:651px){
+  #view-landing.motion-enabled #section-problem{height:165vh;max-width:none;padding:40px 40px 0;overflow:visible}
+  #view-landing.motion-enabled #section-problem .section-container{position:sticky;top:100px;gap:10px}
+  #view-landing.motion-enabled #section-problem .section-header{opacity:1;transform:none;max-width:740px;margin-bottom:20px}
+  #view-landing.motion-enabled #section-problem .section-title{clip-path:none}
+  #view-landing.motion-enabled #section-problem .section-desc{font-size:14px;margin-top:10px;line-height:1.7}
+  #view-landing.motion-enabled .problem-card{transform:translate3d(var(--fan-x,0px),var(--fan-y,0px),0) rotate(var(--fan-rotate,0deg)) scale(var(--fan-scale,1));transition:border-color .3s,box-shadow .3s}
+}
+@media(max-width:1100px){#view-landing .stage-card h3{font-size:25px}#view-landing .problem-cards-grid{max-width:850px}#view-landing .problem-card{padding:26px 22px}}
+@media(max-width:700px), (max-height:650px){#view-landing.motion-enabled .problem-card{opacity:calc(.25 + var(--enter,1) * .75);transform:translateY(calc((1 - var(--enter,1)) * 40px))}#view-landing .problem-card:nth-child(n){margin-top:0;min-height:320px}#view-landing .problem-cards-grid{padding:10px 0;gap:16px}}
+@media(max-width:700px){
+  #view-landing .landing-section{padding:65px 24px}
+  #view-landing .section-header{margin-bottom:20px}
+  #view-landing .section-title{letter-spacing:-.8px;font-size:30px}
+  #view-landing .pipeline-stages-grid{grid-template-columns:1fr;gap:22px;padding:0}
+  #view-landing .stage-card,#view-landing .stage-card:nth-child(n){grid-column:auto;margin:0;min-height:370px;padding:26px}
+  #view-landing .stage-card h3{font-size:25px;margin-top:0}
+  #view-landing .stage-badge{position:absolute;top:28px;right:25px;font-size:8px}
+  #view-landing .stage-illustration,#view-landing .stage-illustration svg{height:110px}
+  #view-landing .stage-card p{font-size:13px}
+  #view-landing .problem-cards-grid{grid-template-columns:1fr;gap:20px;padding:0;margin-top:8px}
+  #view-landing .problem-card,#view-landing .problem-card:nth-child(n){min-height:0;margin:0;padding:28px}
+  #view-landing .problem-card h3{font-size:22px}
+  #view-landing .card-icon-wrap{margin-bottom:5px}
+  #view-landing #section-evidence{padding:65px 20px}
+  #view-landing .evidence-interactive-deck{padding:22px;border-radius:20px}
+  #view-landing .landing-cta-section{padding:70px 20px 90px}
+  #view-landing .cta-inner{padding:15px 0}
+  #view-landing .cta-inner h2{letter-spacing:-1px}
+}
+@media(prefers-reduced-motion:reduce){#view-landing .stage-card,#view-landing .problem-card,#view-landing .section-header,#view-landing .cta-inner,#view-landing .evidence-interactive-deck{opacity:1!important;transform:none!important;transition:none!important}#view-landing .section-title{clip-path:none!important}#view-landing #section-problem{height:auto}#view-landing #section-problem .section-container{position:static}#view-landing #btn-final-cta:hover{transform:none}}
+
+/* Let the document remain the sticky scene's scroll container. */
+body:has(#view-landing.active){overflow:visible}
+
+@media(min-width:701px) and (max-width:1000px){
+  .liquid-header{height:auto;min-height:104px}
+  .header-container{width:100%;padding:14px 24px;gap:10px;flex-wrap:wrap}
+  .header-actions{margin-left:auto}
+  .liquid-nav{order:3;width:100%;justify-content:space-between;gap:4px}
+  .nav-item{font-size:11px;padding:8px 10px}
+  #view-landing.motion-enabled #section-problem .section-container{top:125px}
+  #view-landing .problem-cards-grid{gap:14px;padding:18px 0 30px}
+  #view-landing .problem-card{padding:22px 18px;min-height:330px}
+  #view-landing .problem-card h3{font-size:18px}
+  #view-landing .problem-card p{font-size:12px;line-height:1.75}
+  #view-landing .card-icon-wrap{width:48px;height:48px}
+}

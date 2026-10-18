@@ -1,0 +1,18 @@
+.landing-hero-section{position:relative;isolation:isolate}
+#hero-ascii-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-2;pointer-events:none;opacity:.95;mask-image:linear-gradient(transparent,black 12%,black 78%,transparent);-webkit-mask-image:linear-gradient(transparent,black 12%,black 78%,transparent)}
+.landing-hero-section::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(8,13,10,.65) 0%,rgba(8,13,10,.60) 35%,rgba(8,13,10,.36) 60%,rgba(8,13,10,.20) 100%)}
+.landing-hero-section .hero-headline{text-shadow:0 2px 20px #080d0a,0 0 5px #080d0a}
+.landing-hero-section .hero-supporting-headline,.landing-hero-section .hero-subhead,.landing-hero-section .hero-demo-boundary{text-shadow:0 1px 8px #080d0a}
+@media(max-width:700px){#hero-ascii-canvas{opacity:.65;mask-image:linear-gradient(transparent,black 5%,black 50%,transparent 75%);-webkit-mask-image:linear-gradient(transparent,black 5%,black 50%,transparent 75%)}.landing-hero-section::before{background:linear-gradient(90deg,#080d0aba,#080d0a99 70%,#080d0a66)}}
+
+.tesseract-preview #hero-ascii-canvas{opacity:.95;mask-image:linear-gradient(transparent,black 10%,black 88%,transparent);-webkit-mask-image:linear-gradient(transparent,black 10%,black 88%,transparent)}
+.tesseract-preview .landing-hero-section::before{background:linear-gradient(90deg,#080d0ac9,#080d0a80 48%,#080d0a55)}
+.tesseract-preview-controls{position:absolute;top:12px;right:30px;z-index:5;width:220px;color:#bfd5c5;background:#09140fe8;border:1px solid #88b59a40;border-radius:10px;padding:0 12px;font-size:11px;backdrop-filter:blur(12px)}
+.tesseract-preview-controls summary{min-height:42px;padding:13px 0;cursor:pointer;color:#c5dfcf;list-style-position:inside}
+.tesseract-preview-controls p{font:9px/1.6 monospace;margin:3px 0 14px;color:#95b5a1}
+.tesseract-preview-controls label{display:grid;gap:7px;margin:14px 0;font-size:10px}
+.tesseract-preview-controls input{width:100%;accent-color:#a2dfb8;min-height:24px}
+.tesseract-preview-controls button{width:100%;padding:9px;border:1px solid #8eb79b55;border-radius:6px;background:#203c2c;color:#d7ebdd;font-size:10px;cursor:pointer}
+.tesseract-preview-controls a{display:block;padding:12px 0;color:#b4cdbd;text-align:center;text-decoration:underline}
+.tesseract-preview-controls :is(summary,button,input,a):focus-visible{outline:2px solid #b1e3c1;outline-offset:3px}
+@media(max-width:700px){.tesseract-preview-controls{right:20px;top:8px;width:190px}.tesseract-preview #hero-ascii-canvas{opacity:.6}}
